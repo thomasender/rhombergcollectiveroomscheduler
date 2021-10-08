@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Card, Form, Button, Alert } from "react-bootstrap";
+import { Card, Form, Button, Alert, Badge } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
 
@@ -33,7 +33,7 @@ export const SignUp = () => {
 
   return (
     <>
-      <Card>
+      <Card className="bg-dark text-white">
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
           {error && <Alert variant="danger">{error}</Alert>}
@@ -56,9 +56,9 @@ export const SignUp = () => {
           </Form>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
+      <Badge pill className="bg-light text-dark w-100 text-center mt-2 p-3">
         Already have an account? <Link to="/login">Log In</Link>
-      </div>
+      </Badge>
     </>
   );
 };
