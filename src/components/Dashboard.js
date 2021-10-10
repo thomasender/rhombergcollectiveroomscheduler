@@ -126,7 +126,6 @@ export const Dashboard = () => {
   };
 
   const makeReservation = async (room, day) => {
-    const milliseconds = new Date().getUTCMilliseconds();
     const utcDay = new Date().getUTCDay();
     console.log(utcDay);
     const time = prompt("Which time?");
@@ -156,7 +155,7 @@ export const Dashboard = () => {
   const tdsRoom3 = printTd(3);
   return (
     <>
-      <Card className="flex-row">
+      <Card className="flex-row" style={{ overflow: "auto" }}>
         <Card.Body>
           {error && <Alert variant="danger">{error}</Alert>}
           <Badge
@@ -174,7 +173,7 @@ export const Dashboard = () => {
           </Badge>
         </Card.Body>
       </Card>
-      <Card className="flex-row">
+      <Card className="flex-row" style={{ overflow: "auto" }}>
         <Card.Body>
           <Table striped bordered hover variant="dark">
             <thead>
